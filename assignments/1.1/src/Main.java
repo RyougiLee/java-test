@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+class Assignment_1 {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
@@ -13,7 +13,7 @@ public class Main {
     }
 
 }
-class SumOfThreeNumbers {
+class Assignment_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

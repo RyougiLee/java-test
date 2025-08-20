@@ -3,7 +3,7 @@ import java.lang.Math;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+class Assignment_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the Fahrenheit: ");
@@ -13,7 +13,7 @@ public class Main {
     }
 
 }
-class Rectangle {
+class Assignment_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the length of first leg: ");
@@ -25,7 +25,7 @@ class Rectangle {
     }
 }
 
-class measure {
+class Assignment_3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double gram = scanner.nextDouble();

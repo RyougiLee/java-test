@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+class Assignment_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the value of a: ");
@@ -27,7 +27,7 @@ public class Main {
         }
     }
 
-class Binary{
+class Assignment_2{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         String binary = scanner.nextLine();
@@ -43,7 +43,7 @@ class Binary{
     }
 }
 
-class Prime_number{
+class Assignment_3{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the value of starting number: ");
@@ -65,7 +65,7 @@ class Prime_number{
     }
 }
 
-class Exam{
+class Assignment_4{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int score = 0;

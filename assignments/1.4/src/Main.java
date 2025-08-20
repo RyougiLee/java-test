@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main{
+class Assignment_1{
     public static void main(String[] args) {
         String[] firstnames = {"James","Michael","John","Robert","David","William"};
         String[] lastnames = {"Elsher","Solace","Levine","Thatcher","Raven","Bardot"};
@@ -15,7 +15,7 @@ public class Main{
     }
 }
 
-class subarray{
+class Assignment_2{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of elements:");
@@ -52,7 +52,7 @@ class subarray{
     }
 }
 
-class duplicates{
+class Assignment_3{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of elements:");
