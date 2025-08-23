@@ -286,7 +286,14 @@ class CarDriver2 {
             System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
         }
 
+
         myCar.setCruiseSpeed(100);
-        myCar.turnCruiseControlOn();
+        if(myCar.turnCruiseControlOn()){
+            System.out.println("Cruise successfully turned on");
+        }
+        else{
+            System.out.println("Cruise failed turned on");
+        }
+        System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
     }
 }
