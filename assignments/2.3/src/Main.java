@@ -35,6 +35,11 @@ class Book{
         this.reviews.add(review);
     }
 
+    @Override
+    public String toString() {
+        return this.title;
+    }
+
 }
 
 class Library{
