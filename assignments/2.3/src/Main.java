@@ -76,13 +76,6 @@ class Library{
     }
 
     public void borrowBook(String title, User user){
-        /*for(Book book:books){
-            if(book.getTitle().equals(title)){
-                books.remove(book);
-            }
-        }*/
-
-
         for(Book book:books){
             if(book.getTitle().equals(title)){
                 user.borrowed_books.add(book);
