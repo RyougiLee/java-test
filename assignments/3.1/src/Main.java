@@ -75,7 +75,7 @@ class Bus extends Car {
         this.passengers += passenger;
     }
     public void passengerExit(int passenger) {
-        this.passengers -= passenger;
+        if (passengers > 0) {this.passengers -= passenger;}
     }
     public int getPassengers() {
         return passengers;
