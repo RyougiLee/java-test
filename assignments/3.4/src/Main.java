@@ -1,21 +1,29 @@
 //------------Task 1-------------
 import java.io.*;
 import java.net.*;
+import java.util.Arrays;
 
-public class Main {
+class CSVReader {
+    private final static String FILENAME = "data.csv";
     public static void main(String[] args) {
-        // first, create the url
+
+        int index = 0;
+        double sum = 0;
         URL myUrl;
         try {
-            myUrl = new URL("https://users.metropolia.fi/~jarkkov/temploki.csv");
+            // the url in the task cannot be accessed outside the university network, so I have uploaded the file to my GitHub.
+            myUrl = new URL("https://raw.githubusercontent.com/RyougiLee/java-test/refs/heads/master/assignments/3.4/src/Data%20Streams%20and%20Exceptions.csv");
         } catch (MalformedURLException e) {
             System.err.println(e);
             return;
         }
 
+        BufferedReader bufferedstream = null;
+        String line;
+        String[] columnNames = new String[0];
+        boolean header = true;
+
         try {
-            // open the connection and get the input stream
-            // it will automatically generate HTTP GET-request
             InputStream istream = myUrl.openStream();
 
             // jump to character streams
@@ -24,21 +32,39 @@ public class Main {
             // and to buffered reader for efficiency
             BufferedReader reader = new BufferedReader(istreamreader);
 
-            // we use StringBuilder for efficiency, concatenating ordinary Strings is slow and
-            // generates unnecessary objects
-            String line;
-            StringBuilder response = new StringBuilder();
-
-            // here we read the content of the web page line by line
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-
-            // now it is time to print the result
-            reader.close();
-            System.out.println(response.toString());
+            do {
+                line = reader.readLine();
+                if (line != null) {
+                    if (header) {
+                        // first row of the file contains names of columns
+                        columnNames = line.split(";");
+                        for (int i = 0; i < columnNames.length; i++) {
+                            if (columnNames[i].equals("UlkoTalo")){
+                                index = i;
+                            }
+                        }
+                        header = false;
+                    } else {
+                        // just print data lines with column names
+                        String[] columns = line.split(";");
+                        if(columns[0].contains("01.01.2023")){
+                            sum += Double.parseDouble(columns[index].replace(',','.'));
+                        }
+                    }
+                }
+            } while (line != null);
         } catch (IOException e) {
+            // Error output, will print to console even in case of output redirection
             System.err.println(e);
+        } finally {
+            try {
+                // we will close the stream only if we were able to open it
+                if (bufferedstream != null)
+                    bufferedstream.close();
+            } catch (Exception e) {
+                System.out.println("Error while closing the file " + FILENAME);
+            }
         }
+        System.out.println("Sum = " + sum);
     }
 }
