@@ -265,12 +265,11 @@ class Test {
 
         // Move clock forward by 5
         clock.advance(5.0);
-        double departureTime = clock.getTime();
-        System.out.println("\nClock moved forward to: " + departureTime);
+        System.out.println("\nClock moved forward to: " + clock.getTime());
 
         // Serve all customers
         while (!Customer.cusQueue.isEmpty()) {
-            ServicePoint.serve(departureTime);
+            ServicePoint.serve(clock.getTime());
         }
     }
 
