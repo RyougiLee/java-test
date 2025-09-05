@@ -203,7 +203,7 @@ class Customer{
     }
     static void dequeue(Double endTime){
         cusQueue.getLast().setEndTime(endTime);
-        System.out.println("time spent: "+cusQueue.getLast().calculateTime());
+        System.out.println("Total waiting time: "+cusQueue.getLast().calculateTime());
         cusQueue.removeLast();
     }
     public static void main(String[] args){
@@ -234,7 +234,7 @@ class ServicePoint{
         while(!Customer.cusQueue.isEmpty()){
             long random_time = (long)(Math.random() * 1000);
             removeFromQueueue(endTime + random_time);
-            System.out.println("Service time: "+random_time);
+            System.out.println("Time spent on service: "+random_time);
             clock.advance(random_time);
             calcAveServeTime(random_time);
         }
